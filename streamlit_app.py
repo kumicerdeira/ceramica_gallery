@@ -2,32 +2,39 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.title("gallery de piezas de ceramica")
+st.title("Galería de piezas de cerámica")
 
-uploaded_file = st.file_uploader("upload CSV file", type="csv")
+# CSVファイルアップロード
+uploaded_file = st.file_uploader("Sube tu archivo CSV", type="csv")
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.dataframe(df)
 
-    glaze_filter = st.selectbox("filter from esmalte", options=["ALL"] + df["tipo_esmaltado"].dropna().unique().tolist())
+    # esmaltado（釉薬の種類）フィルター
+    glaze_filter = st.selectbox(
+        "Filtrar por tipo de esmaltado",
+        options=["ALL"] + df["tipo_esmaltado"].dropna().unique().tolist()
+    )
     if glaze_filter != "ALL":
         df = df[df["tipo_esmaltado"] == glaze_filter]
-    
-     # barro（土の種類）フィルター
+
+    # barro（土の種類）フィルター
     barro_filter = st.selectbox(
-        "filter from tipo de barro",
+        "Filtrar por tipo de barro",
         options=["ALL"] + df["tipo_barro"].dropna().unique().tolist()
     )
     if barro_filter != "ALL":
         df = df[df["tipo_barro"] == barro_filter]
 
-    image_folder = "/Users/nishizakakumi/Desktop/ruta_foto"
+    # 画像ファイルはCSVと同じフォルダにある想定（相対パス）
+    image_folder = "."
 
-    for i, row in df.iterrows():
+    for _, row in df.iterrows():
         st.subheader(row["nombre_obra"])
-        st.write(f"esmarte: {row['tipo_esmaltado']}, temperatura de coccion: {row['temperatura_coccion']}℃")
+        st.write(f"Esmalte: {row['tipo_esmaltado']}, Temperatura de cocción: {row['temperatura_coccion']}℃")
 
+        # ruta_foto列は「IMG_0083.jpg, IMG_0084.jpg」のようにカンマ区切り想定
         fotos = [f.strip() for f in str(row["ruta_foto"]).split(",")]
 
         for foto in fotos:
