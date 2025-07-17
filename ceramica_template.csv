@@ -1,0 +1,4 @@
+id_obra,nombre_obra,fecha_creacion,tipo_barro,tipo_esmaltado,temperatura_coccion,metodo_coccion,notas_proceso,ruta_foto,tamano,peso,nombre_serie,esmalte_foto
+001,Cuenco tono marron,2025-07-16,Barro GM,"Engove blanco,marron y naranja,Esmalte termoku y blanco",1250.0,Horno Eléctrico,Engove,IMG_0083.jpg,9cm x 6cm,118.0,Serie tierra,"['IMG_9256.jpg', 'IMG_9596.jpg']"
+002,Cuenco tono verde,2025-07-16,Barro GM,"Engove marron y blanco,Esmalte verde",1250.0,Horno Eléctrico,Engove,IMG_01313.jpg,8.5cm x 7cm,145.0,Serie tierra,"IMG_9995.jpg,　IMG_9593.jpg"
+003,Cuenco tono verde,2025-07-16,Barro BT,"Engove marron y blanco,Esmalte verde",1250.0,Horno Eléctrico,Engove,IMG_0132.jpg,10cm x 7cm,346.0,Serie tierra,"IMG_9992.jpg, IMG_9996.jpg"
