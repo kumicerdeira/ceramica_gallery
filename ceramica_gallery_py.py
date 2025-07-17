@@ -243,7 +243,7 @@ if uploaded_file is not None:
 
 
          # 画像フォルダのパスを指定
-    image_folder = "/Users/nishizakakumi/Desktop/ruta_foto"
+    image_folder = "."
 
     for i, row in df.iterrows():
         st.subheader(row["nombre_obra"])
