@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.title("garally de piezas de ceramica")
+st.title("gallery de piezas de ceramica")
 
 uploaded_file = st.file_uploader("upload CSV file", type="csv")
 
