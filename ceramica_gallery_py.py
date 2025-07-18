@@ -55,7 +55,7 @@ df["esmalte_foto"] = ""
 index = df[df["id_obra"] == "001"].index
 
 # 特定の列を編集,リスト形式で保存　写真を追加
-df.loc[index, "esmalte_foto"] = "['IMG_9256.jpg', 'IMG_9596.jpg']"
+df.loc[index, "esmalte_foto"] = "['IMG_9596.jpg']"
 
 #後にリスト形式で表示が可能
 import ast
@@ -72,7 +72,7 @@ new_row = pd.DataFrame([{
     "fecha_creacion": "2025-07-16",
     "tipo_barro": "Barro GM",
     "tipo_esmaltado": "Engove marron y blanco,Esmalte verde",
-    "esmalte_foto": "IMG_9995.jpg,　IMG_9593.jpg",
+    "esmalte_foto": "IMG_9593.jpg",
     "temperatura_coccion": 1250,
     "metodo_coccion": "Horno Eléctrico",
     "notas_proceso": "Engove",
